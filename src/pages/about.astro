@@ -1,0 +1,81 @@
+---
+const pageTitle = "ABOUT SIGNAL FOCUSED";
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT</a>
+    <a href="/blog">BLOG</a>
+    <h1>{pageTitle}</h1>
+    <h2>Filtering the Noise</h2>
+    <p>
+      I am a long time investor in NFL personnel via high stakes dynasty and
+      fantasy football. Having that skin in the game has kept the stressors of
+      continual competition activated as I evolve alongside this ever changing
+      environment. As a voracious reader and lover of this challenge, I take the
+      river of information that flows across the internet and run it through a
+      finely tuned bullshit filter that the wisdom of trial and error has
+      provided.
+    </p>
+    <h3>About the Author</h3>
+    <p>
+      Lance Turbes (fictional twitter image shown) is an avid competitor
+      passionate about solving the never stagnant puzzle that is high stakes
+      fantasy football. With a focus on the more difficult challenge of its
+      dynasty format, he uses his developed eye for talent to spot up and coming
+      difference makers in the NFL. He enjoys sharing his wisdom, opinions and
+      humor with others as we flow through the wonderful experience of life.
+    </p>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li>
+        I live in {identity.country} and I work as a {identity.occupation}.
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+            {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+  </body>
+</html>
