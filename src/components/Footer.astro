@@ -2,4 +2,45 @@
 
 ---
 
-<footer></footer>
+<footer>
+  <div class="footer">
+    <img class="jesus-image" src="/images/Jesus.png" alt="" />
+    <div class="jesus-quote">"Be not afraid. Only believe."</div>|<a
+      class="site-map"
+      href="/sitemap.xml">site map</a
+    >|<div class="usa-quote">Made in the USA.</div>
+    <img class="usa-image" src="/images/USA.png" alt="" />
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    font-size: 14px;
+    justify-content: space-between;
+  }
+
+  .jesus-image,
+  .usa-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 9px 4px var(--halo-glow);
+    animation: glow 3s linear infinite alternate;
+  }
+
+  @keyframes glow {
+    to {
+      box-shadow: 0px 0px 7px 7px var(--halo-glow);
+    }
+  }
+
+  .site-map {
+    color: #f8740f;
+    text-decoration: none;
+  }
+</style>
